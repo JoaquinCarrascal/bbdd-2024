@@ -1,8 +1,6 @@
 package com.salesianostriana.dam.manytoone;
 
 
-import jakarta.annotation.PostConstruct;
-
 import org.springframework.stereotype.Component;
 
 import com.salesianostriana.dam.manytoone.model.Alumno;
@@ -10,6 +8,7 @@ import com.salesianostriana.dam.manytoone.model.Curso;
 import com.salesianostriana.dam.manytoone.repos.AlumnoRepositorio;
 import com.salesianostriana.dam.manytoone.repos.CursoRepositorio;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 
 @Component
@@ -21,6 +20,11 @@ public class MainDeMentira {
 	
 	@PostConstruct
 	public void ejecutar() {
+		
+		Alumno aB = Alumno.builder()
+				.nombre("Joaquín")
+				.apellidos("Carrascal Franco")
+				.build();
 		
 		Alumno a1 = new Alumno();
 		a1.setNombre("Pepe");
@@ -34,6 +38,8 @@ public class MainDeMentira {
 		
 		alumnoRepositorio.save(a1);
 		alumnoRepositorio.save(a2);
+		alumnoRepositorio.save(aB);
+		
 		
 		Curso c = new Curso();
 		c.setNombre("1º DAM");
