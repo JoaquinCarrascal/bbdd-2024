@@ -98,3 +98,6 @@ insert into alumno (id, nombre, apellidos, email) values (97, 'Lissie', 'Patterf
 insert into alumno (id, nombre, apellidos, email) values (98, 'Jule', 'Robeson', 'jrobeson2p@army.mil');
 insert into alumno (id, nombre, apellidos, email) values (99, 'Mickie', 'Eady', 'meady2q@barnesandnoble.com');
 insert into alumno (id, nombre, apellidos, email) values (100, 'Shaine', 'Cargenven', 'scargenven2r@twitpic.com');
+
+--NEXTVAL('alumno_seq') en vez de poner la id
+ALTER SEQUENCE alumno_seq RESTART WITH 101;
